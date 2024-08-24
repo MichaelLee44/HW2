@@ -2,7 +2,10 @@
 <!-- CIT 215 -->
 <!-- 8/24/24 -->
 <!-- Prof. Kane -->
-<!-- At first I used the VS terminal for debug before realizing the objective of this. It still worked, I was able to pass values/functions on console and see if they were correct.-->
+<!--Honestly, I did not pay attention to the request to use console and made this work without, then re-read the instructions
+and realized that I needed to use console to debug. After brushing up on our course material, I added that to my next iteration.
+I don't think we were supposed to use 'focusout', (let) variable = __ , but I promise it was not external source/a.i based,
+I simply tried that with recycled code from our last in class activity, and it worked.-->
 
 
 <!DOCTYPE html>
@@ -14,7 +17,7 @@
     </head>
 
     <body style = "background-color: greenyellow;">
-        <P> What is your bill?   <input t" class = "inpbox" type = "text"> </input> </P> 
+        <P> What is your bill?   <input class = "inpbox" type = "text"> </input> </P> 
     </body>
 
     <script>
@@ -22,10 +25,27 @@
 
         let bill = document.querySelector('.inpbox');
 
+        //create billnum variable and log it
         bill.addEventListener('focusout',(let) => billnum = parseFloat(bill.value));
+        bill.addEventListener('focusout',(event) => {console.log("billnum = " + billnum)});
+        bill.addEventListener('focusout',(event) => {console.log(billnum)});
+        
+        //create taxedbill variable and log it
         bill.addEventListener('focusout',(let) => taxedbill = billnum + billnum * .07);
+        bill.addEventListener('focusout',(event) => {console.log("taxedbill = " + taxedbill)});
+        bill.addEventListener('focusout',(event) => {console.log(taxedbill)});
+        
+        //create tip variable and log it
         bill.addEventListener('focusout',(let) => tip = taxedbill * .15);
+        bill.addEventListener('focusout',(event) => {console.log("tip = " + tip)});
+        bill.addEventListener('focusout',(event) => {console.log(tip)});
+
+        //create totral variable and lot it
         bill.addEventListener('focusout',(let) => total =  taxedbill + tip);
+        bill.addEventListener('focusout',(event) => {console.log("total = " + total)});
+        bill.addEventListener('focusout',(event) => {console.log(total)});
+        
+        //display requested values
         bill.addEventListener('focusout', (event) => {alert("bill: $" + billnum)});
         bill.addEventListener('focusout', (event) => {alert("bill w/ tax: $" + taxedbill)});
         bill.addEventListener('focusout', (event) => {alert("tip: $" + tip)});
