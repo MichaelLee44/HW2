@@ -1,0 +1,33 @@
+<!-- Michael Kellems -->
+<!-- CIT 215 -->
+<!-- 8/24/24 -->
+<!-- Prof. Kane -->
+
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head> 
+        <meta charset = "UTF-80">
+        <meta name = "viewport" content="width=device-width, initial-scale = 1.0"?>
+        <title> document </title>
+    </head>
+
+    <body style = "background-color: greenyellow;">
+        <P> What is your bill?   <input t" class = "inpbox" type = "text"> </input> </P> 
+    </body>
+
+    <script>
+        alert("Created by: Michael Kellems");
+
+        let bill = document.querySelector('.inpbox');
+
+        bill.addEventListener('focusout',(let) => billnum = parseFloat(bill.value));
+        bill.addEventListener('focusout',(let) => taxedbill = billnum + billnum * .07);
+        bill.addEventListener('focusout',(let) => tip = taxedbill * .15);
+        bill.addEventListener('focusout',(let) => total =  taxedbill + tip);
+        bill.addEventListener('focusout', (event) => {alert("bill: $" + billnum)});
+        bill.addEventListener('focusout', (event) => {alert("bill w/ tax: $" + taxedbill)});
+        bill.addEventListener('focusout', (event) => {alert("tip: $" + tip)});
+        bill.addEventListener('focusout', (event) => {alert("Total: $" + total)});
+    </script>
+</html>
